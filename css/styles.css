@@ -149,16 +149,9 @@
 
   @media (orientation: portrait){
     .tooltip-content {
-        display:none;
-        width: 300%;
-        max-width: 300%;
-        position: absolute;
-        transform: translateX(-50%);
-        transform: scale(80%);
-        left: -100%;
-    }
-    .tooltip-content p {
-        max-width: -100%;
+        width: 210%;
+        white-space: normal;
+        text-align: center;
     }
     .choice-container {
         display: none;
