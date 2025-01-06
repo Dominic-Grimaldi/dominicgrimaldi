@@ -28,7 +28,7 @@
                 <a href="index.html">Home</a>
             </li>
             <li>
-                <a href="aboutme.html" target="_self">About</a>
+                <a href="aboutme.html">About</a>
             </li>
             <li>
                 <a href="experience.html">Experience</a>
@@ -49,33 +49,37 @@
     </header>
     <!-- End header -->
 
-    <div id="lead">
-        <div id="lead-content">
-            <h1 style="color: #573a1e;">Hi, I'm Dominic!</h1>
-            <h2 style="color: #573a1e;">Experienced writer pivoting into UX Writing/Design.</h2>
-            <a href="Grimaldi_Dominic_Resume.pdf" target="_blank" class="btn-rounded-white">View Resume</a>
-        </div>
-        <!-- End #lead-content -->
-
-        <div id="lead-overlay"></div>
-
-        <div id="lead-down">
-            <span>
-                <i class="fa fa-chevron-down" aria-hidden="true"></i>
-            </span>
-        </div>
-        <!-- End #lead-down -->
+    <div id="about">
+        <h2 class="heading">About Me</h2>
+            <div class="container">
+                <p>
+                    I'm a chronic wordsmith obsessed with choosing the right word for the right situation (or button). I've had a passion for storytelling since I was little. I used this passion to complete an advanced English Degree with multiple awards. I've tutored students of all disciplines in all forms of writing, from editing and brainstorming to final drafts. </p>
+                <p>
+                    After graduating, I worked in tech recycling and as a freelance writer. These roles paid the bills, but didn't excite me. 
+                </p>
+                <p>I was laid off in March 2024. This gave me the space needed to find a career I had  real interest in. That's when I discovered UX writing, which challenged my creative and logical sides in a way nothing else did. I was hooked, and since then I've pursued mentorship and certification in the field. 
+                    I've worked on articles, manuscripts, and papers of all shapes and sizes. I've also designed mockups for several mobile and website apps. 
+                </p>
+                <div class="tooltip-container">
+                    <p><span class="tooltip-trigger" onclick="toggleTooltip()">Interests</span></p>
+                    <div class="tooltip-content" id="tooltip">
+                        <p>I enjoy reading, chances are I've devoured a new book every week. Writing comes slowly, but drafting my own novel has been a lifelong dream. </p>
+                        <p>Books are my favorite way to relax, but any well written movie or show will catch my attention (and maybe tears). </p>
+                        <p>I'm an amateur tabletop and PC gamer. It's a labor of love, not skill..</p>
+                    </div>
+                </div>
+            
+                <script>
+                    function toggleTooltip() {
+                        const tooltip = document.getElementById('tooltip');
+                        if (tooltip.style.display === 'block') {
+                            tooltip.style.display = 'none';
+                        } else {
+                            tooltip.style.display = 'block';
+                        }
+                    }
+                </script></div>
     </div>
-    <!-- End #lead -->
-     
-    <div class="choice-container">
-        <a href="aboutme.html" class="choice-option2">About me</a>
-        <a href="experience.html" class="choice-option2">See My Experience</a>
-        <a href="educationAwardsCerts.html" class="choice-option2">Education / Awards / Certificates</a>
-        <a href="uxwritingchallenge.html" class="choice-option2">UX Writing</a>
-        <a href="relevantcurriculum.html" class="choice-option2">Relevant Classes</a>
-        <a href="contactme.html" class="choice-option2">Contact Me</a>
-      </div>
 
     <footer>
         <div class="container">
