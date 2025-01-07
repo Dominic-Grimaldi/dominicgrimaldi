@@ -34,13 +34,10 @@
                 <a href="experience.html">Experience</a>
             </li>
             <li>
-                <a href="educationAwardsCerts.html">Education/Awards/Certificates</a>
+                <a href="educationAwardsCerts.html">Education</a>
             </li>
             <li>
                 <a href="uxwritingchallenge.html">UX Writing</a>
-            </li>
-            <li>
-                <a href="relevantcurriculum.html">Relevant Curriculum</a>
             </li>
             <li>
                 <a href="contactme.html">Contact</a>
@@ -67,15 +64,107 @@
         <!-- End #lead-down -->
     </div>
     <!-- End #lead -->
-     
-    <div class="choice-container">
-        <a href="aboutme.html" class="choice-option2">About me</a>
-        <a href="experience.html" class="choice-option2">See My Experience</a>
-        <a href="educationAwardsCerts.html" class="choice-option2">Education / Awards / Certificates</a>
-        <a href="uxwritingchallenge.html" class="choice-option2">UX Writing</a>
-        <a href="relevantcurriculum.html" class="choice-option2">Relevant Classes</a>
-        <a href="contactme.html" class="choice-option2">Contact Me</a>
-      </div>
+
+    <h1 style="text-align: center;">My UX Designs</h1>
+  <div class="slideshow-container">
+    <!-- Day 1–14 images -->
+    <img src="images/slideshow/Airport Challenge.png" class="slides" alt="Day 1">
+    <img src="images/slideshow/Day 2_ Sports Promo Challenge.png" class="slides" alt="Day 2 - Sports Promo Challenge">
+    <img src="images/slideshow/Day 3_ Incorrect email.png" class="slides" alt="Day 3">
+    <img src="images/slideshow/Day 4_ Grocery App.png" class="slides" alt="Day 4">
+    <img src="images/slideshow/Day 5_ App Crash Report (1).png" class="slides" alt="Day 5">
+    <img src="images/slideshow/Day 6_ Exit Closure Warning GPS.png" class="slides" alt="Day 6">
+    <img src="images/slideshow/Day 7_ Sports Alert on Lockscreen.png" class="slides" alt="Day 7">
+    <img src="images/slideshow/Day 8_ Music App Concert Add.png" class="slides" alt="Day 8">
+    <img src="images/slideshow/Day 9_ Credit Card Update.png" class="slides" alt="Day 9">
+    <img src="images/slideshow/Day 10_ Car Website Location Share.png" class="slides" alt="Day 10">
+    <img src="images/slideshow/Day 11_ Senior SEO Web Entry.png" class="slides" alt="Day 11">
+    <img src="images/slideshow/Day 12_ Account Creation Failure.png" class="slides" alt="Day 12">
+    <img src="images/slideshow/Day 13_ Trucker App Notifcation.png" class="slides" alt="Day 13">
+    <img src="images/slideshow/Day 14_ Shopping App Crash.png" class="slides" alt="Day 14">
+
+    <!-- Day 15 sub-slideshow -->
+    <div id="day15-container">
+      <img src="images/slideshow/day15/Login.png" class="day15-slides" alt="Day 15 - Image 1">
+      <img src="images/slideshow/day15/Create Account.png" class="day15-slides" alt="Day 15 - Image 2">
+      <img src="images/slideshow/day15/Create Password.png" class="day15-slides" alt="Day 15 - Image 3">
+      <img src="images/slideshow/day15/Confirmation.png" class="day15-slides" alt="Day 15 - Image 4">
+      <img src="images/slideshow/day15/Day 15_ Final (Car App).png" class="day15-slides" alt="Day 15 - Image 5">
+    </div>
+
+    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+  </div>
+  <div class="day-number" id="dayNumber" style="text-align: center;"></div>
+
+  <script>
+    let slideIndex = 14;
+    const slides = document.querySelectorAll(".slides, .day15-slides");
+    const dayNumber = document.getElementById("dayNumber");
+    
+    // Descriptions for each day
+    const descriptions = [
+      "Airport Challenge",
+      "Sports Promo",
+      "Incorrect Email",
+      "Grocery App",
+      "Crash Report",
+      "GPS Warning",
+      "Sports Alert",
+      "Music Concert",
+      "Credit Update",
+      "Location Share",
+      "SEO Web Entry",
+      "Account Failure",
+      "Truck Notification",
+      "Shopping Crash",
+      "Login Screen",
+      "Create Account",
+      "Create Password",
+      "Confirmation Step",
+      "Final Car App"
+    ];
+    
+    function showSlides(index) {
+      if (index >= slides.length) slideIndex = 0;
+      if (index < 0) slideIndex = slides.length - 1;
+    
+      slides.forEach(slide => (slide.style.display = "none"));
+    
+      slides[slideIndex].style.display = "block";
+    
+      updateDayNumber();
+    }
+    
+    function changeSlide(step) {
+      slideIndex += step;
+      showSlides(slideIndex);
+    }
+    
+    function updateDayNumber() {
+      let description = descriptions[slideIndex];
+      if (slideIndex < 14) {
+        dayNumber.textContent = `Day ${slideIndex + 1}: ${description}`;
+      } else {
+        dayNumber.textContent = `Day 15 - Image ${slideIndex - 14 + 1}: ${description}`;
+      }
+    }
+    
+    showSlides(slideIndex);
+    
+    document.querySelector(".prev").onclick = () => changeSlide(-1);
+    document.querySelector(".next").onclick = () => changeSlide(1);
+    
+    document.querySelectorAll(".slides, .day15-slides").forEach(image => {
+      image.style.cursor = "pointer"; // Optional: change cursor to pointer to indicate it's clickable
+        
+      image.addEventListener("click", function() {
+        // Open the image in a new tab
+        const imageUrl = image.src;
+        window.open(imageUrl, "_blank");
+      });
+    });
+  </script>
 
     <footer>
         <div class="container">
