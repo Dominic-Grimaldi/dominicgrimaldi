@@ -258,6 +258,12 @@
     font-size: 170%;
     font-weight: bold;
   }
-  /* @media (orientation: portrait) {
-  .prev, .next {
-  } */
+
+  /* @media (orientation: portrait) for slideshow */
+
+  @media (orientation: portrait){
+    .iframe {
+      height: 200px;
+      width: 90% !important;
+    }
+}

@@ -22,144 +22,40 @@
       padding: 0;
       text-align: center;
     }
-    .slideshow-container {
-      position: relative;
-      max-width: 70%;
-      margin: auto;
-      overflow: hidden;
-      border: 2px solid #ddd;
-      border-radius: 10px;
-      background-color: #000;
-    }
-    .slides, .day15-slides {
-      margin-left: auto;
-      margin-right: auto;
-      height: 100%;
-      max-height: 700px;
-      max-width: 100%;
-      object-fit: contain;
-    }
-    .prev, .next {
-        margin: auto;
-      cursor: pointer;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 10%;
-      padding: 10px;
-      color: rgba(53, 126, 133, 0.775);
-      font-weight: bold;
-      font-size: 200%;
-      border-radius: 0 3px 3px 0;
-      user-select: none;
-      display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 2000;
-    }
-    .next {
-        right: 0;
-        border-radius: 3px 0 0 3px;
-    }
-    .prev {
-        left: 0;
-    }
-    .prev:hover, .next:hover {
-      color: white;
-      text-decoration: none;
-      background-color: rgba(53, 126, 133, 0.775);
-    }
-    .day-title {
-      margin-top: 20px;
-      font-size: 20px;
-      font-weight: bold;
-    }
-    .day-number {
-      font-size: 170%;
-      font-weight: bold;
-    }
-    @media (orientation: portrait) {
-    .prev, .next {
-    }
-}
   </style>
 </head>
 <body>
   <h1>UX Challenge Slideshow</h1>
-  <div class="slideshow-container">
-    <!-- Day 1–14 images -->
-    <img src="images/slideshow/Airport Challenge.png" class="slides" alt="Day 1">
-    <img src="images/slideshow/Day 2_ Sports Promo Challenge.png" class="slides" alt="Day 2">
-    <img src="images/slideshow/Day 3_ Incorrect email.png" class="slides" alt="Day 3">
-    <img src="images/slideshow/Day 4_ Grocery App.png" class="slides" alt="Day 4">
-    <img src="images/slideshow/Day 5_ App Crash Report (1).png" class="slides" alt="Day 5">
-    <img src="images/slideshow/Day 6_ Exit Closure Warning GPS.png" class="slides" alt="Day 6">
-    <img src="images/slideshow/Day 7_ Sports Alert on Lockscreen.png" class="slides" alt="Day 7">
-    <img src="images/slideshow/Day 8_ Music App Concert Add.png" class="slides" alt="Day 8">
-    <img src="images/slideshow/Day 9_ Credit Card Update.png" class="slides" alt="Day 9">
-    <img src="images/slideshow/Day 10_ Car Website Location Share.png" class="slides" alt="Day 10">
-    <img src="images/slideshow/Day 11_ Senior SEO Web Entry.png" class="slides" alt="Day 11">
-    <img src="images/slideshow/Day 12_ Account Creation Failure.png" class="slides" alt="Day 12">
-    <img src="images/slideshow/Day 13_ Trucker App Notifcation.png" class="slides" alt="Day 13">
-    <img src="images/slideshow/Day 14_ Shopping App Crash.png" class="slides" alt="Day 14">
-
-    <!-- Day 15 sub-slideshow -->
-    <div id="day15-container">
-      <img src="images/slideshow/day15/Login.png" class="day15-slides" alt="Day 15 - Image 1">
-      <img src="images/slideshow/day15/Create Account.png" class="day15-slides" alt="Day 15 - Image 2">
-      <img src="images/slideshow/day15/Create Password.png" class="day15-slides" alt="Day 15 - Image 3">
-      <img src="images/slideshow/day15/Confirmation.png" class="day15-slides" alt="Day 15 - Image 4">
-      <img src="images/slideshow/day15/Day 15_ Final (Car App).png" class="day15-slides" alt="Day 15 - Image 5">
+  <iframe style="display: block; margin: auto; width: 60%;" class="iframe" src="https://docs.google.com/presentation/d/e/2PACX-1vQ-zIqRlAN5nYaX3RTqO3DoqyonO4Y0nNn514uyyFdjM8k8EKmvMPAqphh3HZTbVbifG-Mg6R3FzNyW/embed?start=false&loop=true&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+  <h1>Days 1 - 15</h1>
+  <footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5 copyright">
+                <p>
+                    Atlanta, Georgia
+                </p>
+                <p>
+                    (678) 633-7487
+                </p>
+                <p>
+                    dominicgrimaldi1738@gmail.com
+                </p>
+            </div>
+            <div class="col-sm-2 top">
+                <span id="to-top">
+                    <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                </span>
+            </div>
+            <div class="col-sm-5 social">
+                <ul>
+                    <li>
+                        <a href="https://www.linkedin.com/in/dominic-grimaldi-6a65991a3/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
-
-    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-    <a class="next" onclick="changeSlide(1)">&#10095;</a>
-  </div>
-  <div class="day-number" id="dayNumber"></div>
-
-  <script>
-    let slideIndex = 14;
-    const slides = document.querySelectorAll(".slides, .day15-slides");
-    const dayNumber = document.getElementById("dayNumber");
-
-    function showSlides(index) {
-      if (index >= slides.length) slideIndex = 0;
-      if (index < 0) slideIndex = slides.length - 1;
-
-      slides.forEach(slide => (slide.style.display = "none"));
-
-      slides[slideIndex].style.display = "block";
-
-      updateDayNumber();
-    }
-
-    function changeSlide(step) {
-      slideIndex += step;
-      showSlides(slideIndex);
-    }
-
-    function updateDayNumber() {
-      if (slideIndex < 14) {
-        dayNumber.textContent = "Day " + (slideIndex + 1);
-      } else {
-        dayNumber.textContent = "Day 15 - Image " + (slideIndex - 14 + 1);
-      }
-    }
-
-    showSlides(slideIndex);
-
-    document.querySelector(".prev").onclick = () => changeSlide(-1);
-    document.querySelector(".next").onclick = () => changeSlide(1);
-
-    document.querySelectorAll(".slides, .day15-slides").forEach(image => {
-      image.style.cursor = "pointer"; // Optional: change cursor to pointer to indicate it's clickable
-        
-      image.addEventListener("click", function() {
-        // Open the image in a new tab
-        const imageUrl = image.src;
-        window.open(imageUrl, "_blank");
-      });
-    });
-  </script>
+</footer>
 </body>
 </html>
