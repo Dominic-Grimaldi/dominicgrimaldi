@@ -153,12 +153,11 @@
         text-align: center;
     }
     .choice-container {
-        display: none;
+        display: block !important;
         width: 70%;
         margin-left: 15% !important;
     }
     .choice-option {
-        display: block;
         margin-top: 10% !important;
       }
 }
@@ -166,12 +165,11 @@
   /* UX Writing Challenges -> */
 
   .choice-container {
-    display: block;
-    text-align: center;
-    padding: 5% 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     background-color: #eae6e1;
-    margin: 0% auto;
-    margin-left: 3%;
   }
 
   .choice-option {
@@ -187,6 +185,9 @@
     border: 2px solid #573a1e;
     transition: all 0.3s ease;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    display: flex; /* Ensures content inside aligns properly */
+    flex-direction: column; /* Ensures the "In progress" stays below the main text */
+    align-items: center; /* Centers the text within the button */
   }
 
   .choice-option:hover {
